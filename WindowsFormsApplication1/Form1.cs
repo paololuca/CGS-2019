@@ -361,21 +361,7 @@ namespace WindowsFormsApplication1
                         }
                         else
                         {
-                            if ((int)r.Cells[4].Value > (int)r.Cells[9].Value)
-                            {
-                                res.Vittorie++;
-                                res.PuntiFatti += (int)r.Cells[4].Value;// > 3 ? 3 : (int)r.Cells[4].Value;
-                                res.PuntiSubiti += (int)r.Cells[9].Value;
-                            }
-
-                            if ((int)r.Cells[4].Value < (int)r.Cells[9].Value)
-                            {
-                                res.PuntiFatti += (int)r.Cells[4].Value;
-                                res.PuntiSubiti += (int)r.Cells[9].Value;// > 3 ? 3 : (int)r.Cells[9].Value;
-                                res.Sconfitte++;
-                            }
-
-                            if (((int)r.Cells[9].Value < 3) && ((int)r.Cells[4].Value < 3))
+							if (((int)r.Cells[9].Value < 3) && ((int)r.Cells[4].Value < 3))
                             {
                                 if ((int)r.Cells[4].Value > (int)r.Cells[9].Value)
                                     res.Vittorie++;
@@ -386,6 +372,23 @@ namespace WindowsFormsApplication1
                                 res.PuntiSubiti += (int)r.Cells[9].Value;
 
                             }
+							else
+							{
+								if ((int)r.Cells[4].Value > (int)r.Cells[9].Value)
+								{
+									res.Vittorie++;
+									res.PuntiFatti += (int)r.Cells[4].Value;// > 3 ? 3 : (int)r.Cells[4].Value;
+									res.PuntiSubiti += (int)r.Cells[9].Value;
+								}
+
+								if ((int)r.Cells[4].Value < (int)r.Cells[9].Value)
+								{
+									res.PuntiFatti += (int)r.Cells[4].Value;
+									res.PuntiSubiti += (int)r.Cells[9].Value;// > 3 ? 3 : (int)r.Cells[9].Value;
+									res.Sconfitte++;
+								}
+							}
+                            
                         }
                     }
                     else if ((int)r.Cells[5].Value == atleta)   //se sono l'atleta a "destra"
@@ -398,21 +401,7 @@ namespace WindowsFormsApplication1
 
                         else
                         {
-                            if ((int)r.Cells[9].Value > (int)r.Cells[4].Value)
-                            {
-                                res.Vittorie++;
-                                res.PuntiFatti += (int)r.Cells[9].Value;// > 3 ? 3 : (int)r.Cells[9].Value;
-                                res.PuntiSubiti += (int)r.Cells[4].Value;
-                            }
-
-                            if ((int)r.Cells[9].Value < (int)r.Cells[4].Value)
-                            {
-                                res.PuntiFatti += (int)r.Cells[9].Value;
-                                res.PuntiSubiti += (int)r.Cells[4].Value;// > 3 ? 3 : (int)r.Cells[4].Value;
-                                res.Sconfitte++;
-                            }
-                            
-                            if (((int)r.Cells[4].Value < 3) && ((int)r.Cells[9].Value < 3))
+							if (((int)r.Cells[4].Value < 3) && ((int)r.Cells[9].Value < 3))
                             {
                                 if ((int)r.Cells[4].Value < (int)r.Cells[9].Value)
                                     res.Vittorie++;
@@ -422,6 +411,22 @@ namespace WindowsFormsApplication1
                                 res.PuntiFatti += (int)r.Cells[9].Value;
                                 res.PuntiSubiti += (int)r.Cells[4].Value;
                             }
+							else
+							{
+								if ((int)r.Cells[9].Value > (int)r.Cells[4].Value)
+								{
+									res.Vittorie++;
+									res.PuntiFatti += (int)r.Cells[9].Value;// > 3 ? 3 : (int)r.Cells[9].Value;
+									res.PuntiSubiti += (int)r.Cells[4].Value;
+								}
+
+								if ((int)r.Cells[9].Value < (int)r.Cells[4].Value)
+								{
+									res.PuntiFatti += (int)r.Cells[9].Value;
+									res.PuntiSubiti += (int)r.Cells[4].Value;// > 3 ? 3 : (int)r.Cells[4].Value;
+									res.Sconfitte++;
+								}
+							}
                         }
                     }
                 }
